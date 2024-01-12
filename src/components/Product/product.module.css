@@ -1,0 +1,17 @@
+
+
+.product_item {
+    width: 30%;
+    margin-bottom: 30px;
+    background: #c2f4cb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* тінь */
+}
+
+.product_img{
+    width: 100%;
+    border-radius: 10px 10px;
+}
+
+.product_img:hover {
+    transform: scale(1.02);
+}

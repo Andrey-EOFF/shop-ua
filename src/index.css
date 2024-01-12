@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto&display=swap');
 
 * {
-
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
 }
 
@@ -15,8 +16,9 @@ body {
 }
 
 .wrapper {
-    width: 1280px;
+    max-width: 1280px;
     margin: 50px auto;
+    padding: 0 20px;
 }
 
 /* HEADER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -66,36 +68,31 @@ header .presentation {
 
     position: relative;
 
+    padding: 20px;
+
+    margin-bottom: 40px;
+
+}
+
+header .presentation::after,
+header .presentation::before {
+    position: absolute;
+    color: #fff;
+    font-size: 34px; /* Змінено розмір для адаптації */
 }
 
 header .presentation::after {
     content: 'Кращі товари для вашого дому';
-    
-    position: absolute;
-
-    top: 100px;
-    left: 100px;
-
-    color: #fff;
-
-    width: 400px;
-    font-size: 50px;
-    font-weight: 600;
+    top: 40px;
+    left: 40px;
+    width: 80%;
 }
 
 header .presentation::before {
     content: 'Обирай найкраще!';
-    
-    position: absolute;
-
-    bottom: 100px;
-    right: 100px;
-
-    color: #fff;
-
-    width: 400px;
-    font-size: 50px;
-    font-weight: 600;
+    bottom: 40px;
+    right: 40px;
+    width: 80%;
 }
 
 /* FOOTER !!!!! !!!!  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
