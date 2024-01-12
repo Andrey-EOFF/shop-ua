@@ -1,7 +1,11 @@
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div> Shop-UA
+    <div className="wrapper">
+      <Header />
+      <Footer />
     </div>
   );
 }

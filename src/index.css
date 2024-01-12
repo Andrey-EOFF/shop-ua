@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto&display=swap');
+
+* {
+
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #222;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 50px auto;
+}
+
+/* HEADER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(44, 44, 246);
+    cursor: pointer;
+}
+
+header .logo:hover {
+    transform: scale(1.07); /* Збільшуємо масштаб на 30% */
+    transition: transform 0.5s; /* Додаємо плавний перехід з тривалістю 0.3 секунди */
+  }
+
+.nav-item {
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 600ms ease;
+}
+
+.nav-item:hover {
+    opacity: 0.5;
+}
+
+/* HERO IMG !!!!  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+header .presentation {
+
+    background: url('./img/bgimg.png') no-repeat;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: #aaaaaa;
+
+    position: relative;
+
+}
+
+header .presentation::after {
+    content: 'Кращі товари для вашого дому';
+    
+    position: absolute;
+
+    top: 100px;
+    left: 100px;
+
+    color: #fff;
+
+    width: 400px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+header .presentation::before {
+    content: 'Обирай найкраще!';
+    
+    position: absolute;
+
+    bottom: 100px;
+    right: 100px;
+
+    color: #fff;
+
+    width: 400px;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* FOOTER !!!!! !!!!  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+footer {
+    text-align: center;
+    margin-top: 100px;
+}
