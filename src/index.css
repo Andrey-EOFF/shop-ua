@@ -97,6 +97,14 @@ box-shadow: 20px 20px 30px 8px rgba(207,207,207,1);
     font-size: 20px;
 }
 
+.summa {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 /* HERO IMG !!!!  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 header .presentation {
