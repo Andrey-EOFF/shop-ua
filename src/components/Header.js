@@ -1,8 +1,27 @@
 import React, { useState } from "react";
 
 import { FaShoppingBasket } from "react-icons/fa";
+import Order from "./Order/Order";
 
-export default function Header() {
+const showOrders = (props) => {
+  return (
+    <div>
+      {props.orders.map((el) => (
+        <Order key={el.id} item={el} />
+      ))}
+    </div>
+  );
+};
+
+const showNothing = () => {
+  return (
+    <div className="shop_cart_empty">
+      <h2>Ви ще не обрали жодного товару!</h2>
+    </div>
+  );
+};
+
+export default function Header(props) {
   let [cartOpen, setCartOpen] = useState(false);
 
   return (
@@ -15,9 +34,14 @@ export default function Header() {
             <li className="nav-item">Контакти</li>
             <li className="nav-item">Кабінет</li>
           </ul>
-          <FaShoppingBasket onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop_card_button ${cartOpen && 'active'}`} />
+          <FaShoppingBasket
+            onClick={() => setCartOpen((cartOpen = !cartOpen))}
+            className={`shop_card_button ${cartOpen && "active"}`}
+          />
           {cartOpen && (
-            <div className="shop_cart"></div>
+            <div className="shop_cart">
+              {props.orders.length > 0 ? showOrders(props) : showNothing()}
+            </div>
           )}
         </div>
       </div>
@@ -25,3 +49,7 @@ export default function Header() {
     </header>
   );
 }
+
+// props.orders.map((el) => (
+//   <Order key={el.id} item={el} />
+// ))

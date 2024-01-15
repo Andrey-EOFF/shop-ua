@@ -84,14 +84,17 @@ header .logo:hover {
 
     top: 40px;
     right: 0;
-    width: 550px;
-    min-height: 300px;
+    padding: 15px;
     background-color: rgb(238, 252, 252);
     z-index: 10;
 
     -webkit-box-shadow: 20px 20px 30px 8px rgba(207,207,207,1);
 -moz-box-shadow: 20px 20px 30px 8px rgba(207,207,207,1);
 box-shadow: 20px 20px 30px 8px rgba(207,207,207,1);
+}
+
+.shop_cart_empty {
+    font-size: 20px;
 }
 
 /* HERO IMG !!!!  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
