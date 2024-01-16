@@ -111,7 +111,7 @@ header .presentation {
 
     background: url('./img/bgimg.png') no-repeat;
     width: 100%;
-    height: 700px;
+    height: 500px;
     background-size: cover;
     background-position: center center;
     background-blend-mode: multiply;
