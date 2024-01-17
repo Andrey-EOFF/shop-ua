@@ -54,7 +54,3 @@ export default function Header(props) {
     </header>
   );
 }
-
-// props.orders.map((el) => (
-//   <Order key={el.id} item={el} />
-// ))
