@@ -1,24 +1,23 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef, useEffect } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 import Order from "./Order/Order";
 
-const showOrders = (props) => {
+const ShowOrders = ({ orders, onDelete }) => {
   let summa = 0;
 
-  props.orders.forEach((el) => (summa += Number.parseFloat(el.price)));
+  orders.forEach((el) => (summa += Number.parseFloat(el.price)));
 
   return (
     <div>
-      {props.orders.map((el) => (
-        <Order onDelete={props.onDelete} key={el.id} item={el} />
+      {orders.map((el) => (
+        <Order onDelete={onDelete} key={el.id} item={el} />
       ))}
       <p className="summa">Всього: {new Intl.NumberFormat().format(summa)}$</p>
     </div>
   );
 };
 
-const showNothing = () => {
+const ShowNothing = () => {
   return (
     <div className="shop_cart_empty">
       <h2>Ви ще не обрали жодного товару!</h2>
@@ -27,7 +26,33 @@ const showNothing = () => {
 };
 
 export default function Header(props) {
-  let [cartOpen, setCartOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const cartRef = useRef(null);
+
+  const handleCartClick = () => {
+    setCartOpen(!cartOpen);
+  };
+
+  const handleCloseCart = (event) => {
+    if (cartRef.current && !cartRef.current.contains(event.target)) {
+      setCartOpen(false);
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Escape") {
+      setCartOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleCloseCart);
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("mousedown", handleCloseCart);
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   return (
     <header>
@@ -40,12 +65,16 @@ export default function Header(props) {
             <li className="nav-item">Кабінет</li>
           </ul>
           <FaShoppingBasket
-            onClick={() => setCartOpen((cartOpen = !cartOpen))}
+            onClick={handleCartClick}
             className={`shop_card_button ${cartOpen && "active"}`}
           />
           {cartOpen && (
-            <div className="shop_cart">
-              {props.orders.length > 0 ? showOrders(props) : showNothing()}
+            <div ref={cartRef} className="shop_cart">
+              {props.orders.length > 0 ? (
+                <ShowOrders orders={props.orders} onDelete={props.onDelete} />
+              ) : (
+                <ShowNothing />
+              )}
             </div>
           )}
         </div>
