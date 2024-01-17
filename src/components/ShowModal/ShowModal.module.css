@@ -1,23 +1,25 @@
 
-
-.product_item {
-    width: 30%;
-    min-width: 325px;
-    margin: 20px;
-    background: #c2f4cb;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* тінь */
-    overflow: hidden;
-    border-radius: 10px 10px;
-    transition: transform 0.3s ease-in-out;
-
-    padding-bottom: 20px;
-
-    position: relative;
+.showModalItem {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+    overflow: auto;
 }
 
-.product_item:hover {
-    transform: scale(1.05);
-  }
+.modal_product {
+    width: 450px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    border-radius: 10px;
+    background: whitesmoke;
+}
+
+
 
 .product_img{
     width: 100%;

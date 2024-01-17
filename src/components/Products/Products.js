@@ -7,7 +7,12 @@ export class Products extends Component {
     return (
       <main className={styles.products}>
         {this.props.items.map((el) => (
-          <Product key={el.id} item={el} onAdd={this.props.onAdd} />
+          <Product
+            key={el.id}
+            item={el}
+            onAdd={this.props.onAdd}
+            onShowModalProduct={this.props.onShowModal}
+          />
         ))}
       </main>
     );

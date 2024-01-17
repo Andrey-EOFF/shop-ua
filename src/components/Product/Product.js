@@ -12,6 +12,7 @@ export class Product extends Component {
           width="300px"
           height="300px"
           className={styles.product_img}
+          onClick={() => this.props.onShowModalProduct(this.props.item)}
         />
         <div className="product_card_options">
           <h2 className={styles.product_title}>{this.props.item.title}</h2>
