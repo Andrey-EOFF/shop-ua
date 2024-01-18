@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import Order from "./Order/Order";
 
 const ShowOrders = ({ orders, onDelete }) => {
@@ -57,12 +58,20 @@ export default function Header(props) {
   return (
     <header>
       <div className="header">
-        <span className="logo">Home UA</span>
+        <span className="logo">
+          <NavLink to="/">Home UA</NavLink>
+        </span>
         <div className="nav">
           <ul className="nav-list">
-            <li className="nav-item">Про нас</li>
-            <li className="nav-item">Контакти</li>
-            <li className="nav-item">Кабінет</li>
+            <li className="nav-item">
+              <NavLink to="/about-us">Про нас</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/contacts">Контакти</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="/account">Кабінет</NavLink>
+            </li>
           </ul>
           <FaShoppingBasket
             onClick={handleCartClick}
